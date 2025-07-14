@@ -21,11 +21,12 @@ export const getGrid = async (): Promise<any> => {
   return response.data;
 };
 
-export const draftPlayer = async (playerId: string, teamName: string): Promise<any> => {
-  const response = await api.post('/api/draft-player', {
-    playerId,
-    teamName
-  })
+export const draftPlayer = async (playerId: number, teamName: string): Promise<any> => {
+  const response = await api.post('/api/draft', {
+    player_id: playerId,
+    team_name: teamName
+  });
+  return response.data;
 };
 
 export const getTeams = async (): Promise<any> => {

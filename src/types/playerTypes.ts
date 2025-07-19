@@ -3,8 +3,6 @@ export type Player = {
   name: string;
   pot: number;
   position: string;
-};
-
-export type TeamsResponse = {
-  [teamName: string]: Player[];
+  drafted_by?: string;
+  image?: string;
 };

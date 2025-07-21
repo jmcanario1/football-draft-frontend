@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-  background-color: #333;
+  background-color: white;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   padding: 0 1rem;
 
   .site-title {
-    font-size: 2rem;
+    font-size: 4rem;
   }
 
   ul {
@@ -22,12 +22,13 @@ export const Nav = styled.nav`
   }
 
   a {
-    color: inherit;
+    color: #0b2e44;
     text-decoration: none;
     height: 100%;
     display: flex;
     align-items: center;
-    padding: .25rem;
+    padding: .5rem;
+    font-size: 2rem;
   }
 
   li {
@@ -37,7 +38,12 @@ export const Nav = styled.nav`
     }
 
     &:hover {
-      background-color: #555;
+      background-color: #0b2e4480;
     }
+  }
+
+  .logo {
+  width: 64px;
+  height: 64px;
   }
   `

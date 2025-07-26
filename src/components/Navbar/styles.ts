@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-  background-color: white;
+  background-color: #ec6724;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -48,7 +48,7 @@ export const Nav = styled.nav`
     }
 
     &:hover {
-      background-color: #0b2e4480;
+      background-color: #c9571fff;
     }
   }
 

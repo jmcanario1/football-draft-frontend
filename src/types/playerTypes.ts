@@ -3,6 +3,6 @@ export type Player = {
   name: string;
   pot: number;
   position: string;
-  drafted_by?: string;
-  image?: string;
+  drafted_by?: string | null;
+  image?: string | null;
 };

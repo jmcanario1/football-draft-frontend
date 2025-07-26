@@ -4,7 +4,7 @@ import { Nav } from './styles';
 export default function Navbar() {
   return <Nav className='nav'>
     <div className="logo-and-title">
-      <img className='logo-image' src='public/assets/draftool.ico' alt='logo' height='32'/>
+      <img className='logo-image' src='/assets/draftool.ico' alt='logo' height='32'/>
       <a href="/" className="site-title">DrafTool</a>
     </div>
     <ul>

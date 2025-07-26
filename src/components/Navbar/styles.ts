@@ -9,6 +9,16 @@ export const Nav = styled.nav`
   gap: 2rem;
   padding: 0 1rem;
 
+  .logo-and-title {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .logo-image {
+    justify-content: center;
+  }
+  
   .site-title {
     font-size: 4rem;
   }

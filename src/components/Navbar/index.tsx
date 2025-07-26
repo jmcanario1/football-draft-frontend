@@ -2,9 +2,10 @@ import { Nav } from './styles';
 
 export default function Navbar() {
   return <Nav className='nav'>
-    <a href="/" className="site-title">
-      <img src="/assets/draftool.ico" alt="DrafTool Logo" className="logo" />
-      DrafTool</a>
+    <div className="logo-and-title">
+      <img className='logo-image' src='/assets/draftool.ico' alt='logo' height='32'/>
+      <a href="/" className="site-title">DrafTool</a>
+    </div>
     <ul>
       <li>
         <a href="/players"> Jogadores </a>

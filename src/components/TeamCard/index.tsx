@@ -1,12 +1,12 @@
 import React from 'react';
-import { Player } from '../../types/playerTypes';
+import { Team } from '../../types/teamTypes';
 
-type PlayerCardProps = {
-  player: Player;
+type TeamCardProps = {
+  team: Team;
 };
 
-const PlayerCard: React.FC<PlayerCardProps> = ({ player }) => {
-  const hasImage = Boolean(player.image && player.image.trim() !== '');
+const TeamCard: React.FC<TeamCardProps> = ({ team }) => {
+  const hasImage = Boolean(team.image && team.image.trim() !== '');
   
   return (
     <div style={{
@@ -18,8 +18,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ player }) => {
       boxShadow: '2px 2px 6px rgba(0,0,0,0.1)',
       display: 'flex',
       alignItems: 'center',
-      gap: '12px',
-      backgroundColor: '#ec6724'
+      gap: '12px'
     }}>
 <div style={{
   width: 60,
@@ -38,32 +37,29 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ player }) => {
 }}>
   {hasImage ? (
     <img
-      src={player.image!}
-      alt={`Foto de perfil de ${player.name}`}
+      src={team.image!}
+      alt={`Foto de perfil de ${team.name}`}
       style={{
         width: '100%',
         height: '100%',
-        objectFit: 'cover',
+        objectFit: 'cover', 
         display: 'block'
       }}
     />
   ) : (
-    <span aria-label={`Inicial do nome: ${player.name.charAt(0)}`}>
-      {player.name.charAt(0)}
+    <span aria-label={`Inicial do nome: ${team.name.charAt(0)}`}>
+      {team.name.charAt(0)}
     </span>
   )}
 </div>
 
       <div>
-        <h3 style={{ margin: 0 }}>{player.name}</h3>
+        <h3 style={{ margin: 0 }}>{team.name}</h3>
         <p style={{ margin: '4px 0' }}>
-          <strong>Posição:</strong> {player.position} <br />
-          <strong>Pote:</strong> {player.pot} <br />
-          <strong>Drafted by:</strong> {player.drafted_by ?? 'Não draftado'}
         </p>
       </div>
     </div>
   );
 };
 
-export default PlayerCard;
+export default TeamCard;

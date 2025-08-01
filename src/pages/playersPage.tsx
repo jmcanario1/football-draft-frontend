@@ -4,6 +4,7 @@ import { Player } from "../types/playerTypes";
 
 function PlayersPage() {
   const [players, setPlayers] = useState<Player[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const mockedPlayers = [
     { id: 1, name: "Lucas Ramos", pot: 0, position: "MID", drafted_by: null, image: "/playerImages/lucas.jpeg" },
@@ -92,17 +93,47 @@ function PlayersPage() {
     setPlayers(mockedPlayers);
   }, []);
 
+  const filteredPlayers = players.filter((player) => {
+    const term = searchTerm.toLowerCase();
+    return (
+      player.name.toLowerCase().includes(term) ||
+      player.position.toLowerCase().includes(term) ||
+      String(player.pot).includes(term) ||
+      (player.drafted_by?.toLowerCase().includes(term) ?? false)
+    );
+  });
   return (
-    <main>
+    <main style={{ padding: '16px', backgroundColor: '#ec6724' }}>
       <h1>Jogadores</h1>
+
+      {/* Barra de Pesquisa */}
+      <div style={{ marginBottom: '16px' }}>
+        <input
+          type="text"
+          placeholder="Pesquisar jogador..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{
+            padding: '8px',
+            fontSize: '16px',
+            width: '100%',
+            maxWidth: '400px',
+            borderRadius: '4px',
+            border: '1px solid #ccc'
+          }}
+        />
+      </div>
+
       <div>
         <button>Cadastrar Novo Jogador</button>
       </div>
+
       <section>
         <h2>Lista de Jogadores</h2>
-        <PlayerCardList players={players} />
+        <PlayerCardList players={filteredPlayers} />
       </section>
     </main>
   );
 }
+
 export default PlayersPage;
